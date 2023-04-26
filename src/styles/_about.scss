@@ -1,0 +1,45 @@
+@use "variables";
+
+.about {
+  padding-bottom: 10rem;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  img {
+    width: 31.25rem;
+    border-radius: 2px;
+  }
+
+  &__other__movies {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+
+    &__images {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+
+      img {
+        width: 100%;
+        height: 5rem;
+        border-radius: 2px;
+        background-size: cover;
+        position: relative;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+
+.about__container--plot {
+  border: 1px solid variables.$textColor;
+  border-radius: 2px;
+  padding: 3rem 2rem;
+}

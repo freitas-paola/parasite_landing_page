@@ -1,0 +1,43 @@
+@use "variables";
+
+.reviews {
+  padding-bottom: 10rem;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 2rem;
+
+    img {
+      max-width: 100%;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+
+    &__text {
+      .text {
+        padding-top: 1rem;
+        padding-bottom: 0.5rem;
+      }
+
+      span {
+        line-height: 1.4;
+        font-size: 14px;
+      }
+
+      a {
+        line-height: 1.6;
+        text-decoration: none;
+        text-transform: uppercase;
+        position: relative;
+        color: variables.$textColor;
+
+        &:hover {
+          border: 5px solid red;
+        }
+      }
+    }
+  }
+}

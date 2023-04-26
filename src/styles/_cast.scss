@@ -1,0 +1,37 @@
+@use "variables";
+
+.cast {
+  padding-bottom: 10rem;
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  &__title {
+    text-align: center;
+    padding-bottom: 2.5rem;
+  }
+
+  &__info {
+    border-radius: 2px;
+    overflow: hidden;
+    &__img {
+      width: 100%;
+      height: 18rem;
+      object-fit: cover;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__text {
+      text-align: center;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 1.5rem 1rem 1rem 1rem;
+      background-color: rgba(variables.$tagColor, 0.4);
+    }
+  }
+}
