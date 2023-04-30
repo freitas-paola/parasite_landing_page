@@ -2,8 +2,9 @@
 @use "header";
 @use "about";
 @use "cast";
-@use "trailer";
+
 @use "reviews";
+@use "footer";
 
 * {
   padding: 0;
@@ -19,17 +20,26 @@ body {
 
 .icon {
   width: 3rem;
-  stroke: rgba(variables.$textColor, 0.7);
+  stroke: rgba(variables.$textColor, 0.9);
+
+  @media (max-width: 300px) {
+    width: 2rem;
+  }
 }
 
 .display {
   display: none;
 }
 
+.filter {
+  filter: opacity(30%);
+}
+
 .container {
   max-width: 1024px;
-  width: 100%;
   margin: 0 auto;
+  width: 100%;
+  padding: 1rem;
 }
 
 .title {
@@ -40,13 +50,55 @@ body {
 
 .title-md {
   font-size: 2rem;
+
+  @media (max-width: 500px) {
+    font-size: 1.5rem;
+  }
 }
 
 .title-sm {
   padding-top: 0.5rem;
+
+  @media (max-width: 300px) {
+    font-size: 1rem;
+  }
 }
 
 .text {
   line-height: 1.6;
   padding-bottom: 0.4rem;
+
+  @media (max-width: 960px) {
+    font-size: 0.9rem;
+  }
+}
+
+.text-sm {
+  font-size: 0.8rem;
+}
+
+.arrow__down {
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+
+  transform: translate(-50%, 0%);
+  animation: fade_move_down 2s ease-in-out infinite;
+}
+
+@keyframes fade_move_down {
+  0% {
+    transform: translate(0, -10px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 10px);
+    opacity: 0;
+  }
 }

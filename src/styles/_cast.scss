@@ -1,11 +1,22 @@
 @use "variables";
 
 .cast {
-  padding-bottom: 10rem;
+  padding-top: 5rem;
+  padding-bottom: 7rem;
+  position: relative;
+
   &__container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+
+    @media (max-width: 820px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 500px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__title {
@@ -21,6 +32,10 @@
       height: 18rem;
       object-fit: cover;
 
+      @media (max-width: 820px) {
+        height: 24rem;
+      }
+
       &:hover {
         cursor: pointer;
       }
@@ -32,6 +47,11 @@
       text-transform: uppercase;
       padding: 1.5rem 1rem 1rem 1rem;
       background-color: rgba(variables.$tagColor, 0.4);
+
+      &--light {
+        background-color: variables.$textColor;
+        color: variables.$backgroundColor;
+      }
     }
   }
 }
